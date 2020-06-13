@@ -6,10 +6,28 @@
     // }
 
     if (isset($_POST['submit'])) {
-        echo htmlspecialchars($_POST['email']);
-        echo htmlspecialchars($_POST['title']);
-        echo htmlspecialchars($_POST['ingredients']);
-    }
+
+        // check email
+        if (empty($_POST['email'])) {
+            echo 'An email is required <br />';
+        } else {
+            echo htmlspecialchars($_POST['email']);
+        }
+
+        // check email
+        if (empty($_POST['title'])) {
+            echo 'An Title is required <br />';
+        } else {
+            echo htmlspecialchars($_POST['title']);
+        }
+
+        // check email
+        if (empty($_POST['ingredients'])) {
+            echo 'At least one ingredients is required <br />';
+        } else {
+            echo htmlspecialchars($_POST['ingredients']);
+        }
+    } // end of the post check
 ?>
 <!DOCTYPE html>
 <html lang="en">
