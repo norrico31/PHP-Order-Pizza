@@ -69,13 +69,19 @@
             <form action="add.php" class="white" method="POST">
                 <label>Email:</label>
                 <input type="text" name="email" value="<?php echo htmlspecialchars($email); ?>">
-                <div class="red-text"><?php echo $errors['email']; ?></div>
+                <div class="red-text">
+                    <?php echo $errors['email']; ?>
+                </div>
                 <label>Pizza Title:</label>
                 <input type="text" name="title" value="<?php echo htmlspecialchars($title); ?>">
-                <div class="red-text"><?php echo $errors['title']; ?></div>
+                <div class="red-text">
+                    <?php echo $errors['title']; ?>
+                </div>
                 <label>Ingredients (comma separated):</label>
                 <input type="text" name="ingredients" value="<?php echo htmlspecialchars($ingredients); ?>">
-                <div class="red-text"><?php echo $errors['ingredients']; ?></div>
+                <div class="red-text">
+                    <?php echo $errors['ingredients']; ?>
+                </div>
                 <div class="center">
                     <input type="submit" name="submit" value="Submit" class="btn brand z-depth-0">
                 </div>
