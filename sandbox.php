@@ -1,13 +1,13 @@
 <?php 
-    $score = 50;
+   // sessions
+    if (isset($_POST['submit'])) {
+        session_start();
 
-    // $result = $score > 30 ? 'high score' : 'low score';
+        $_SESSION['name'] = $_POST['name'];
 
-    // superglobals
-    echo $_SERVER['SERVER_NAME']. '<br />';
-    echo $_SERVER['REQUEST_METHOD'] . '<br />';
-    echo $_SERVER['SCRIPT_FILENAME'] . '<br />';
-    echo $_SERVER['PHP_SELF'] . '<br />';
+        // echo $_SESSION['name'];
+        header('Location: index.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,8 +17,9 @@
     <title>Ternary Operator</title>
 </head>
 <body>
-    <!-- <p><?php echo $result; ?></p> -->
-
-    <!-- <p><?php echo $score > 40 ? 'high score!' : 'low score'; ?></p> -->
+    <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
+        <input type="text" name="name">
+        <input type="submit" name="submit" value="Submit">
+    </form>
 </body>
 </html>
