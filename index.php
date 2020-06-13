@@ -1,11 +1,6 @@
 <?php 
-    // connect to databse
-    $conn = mysqli_connect('localhost', 'order_pizza', 'pizza1234', 'order_pizza');
 
-    // check connection
-    if (!$conn) {
-        echo 'Connection error: ' . mysqli_connect_error();
-    }
+    include 'config/db_connect.php';
 
     // write query for all record in pizzas
     $sql =  'SELECT title, ingredients, id FROM pizzas ORDER BY created_at';
@@ -53,13 +48,13 @@
                     </div>
                 <?php endforeach; ?>
 
+            </div>
+            
                 <?php if (count($pizzas) >= 2): ?>
                     <p>there are 3 or more pizzas</p>
                 <?php else:  ?>
                     <p>there are less than 3 pizzas</p>
                 <?php endif; ?>
-                
-            </div>
         </div>
 
     <?php include 'templates/footer.php'; ?>
