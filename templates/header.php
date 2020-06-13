@@ -4,11 +4,10 @@
     // $_SESSION['name'] = 'gerald';
 
     if ($_SERVER['QUERY_STRING'] == 'noname') {
-        // unset($_SESSION['name']);
-        session_unset($_SESSION['name']);
+        unset($_SESSION['name']);
     }
     
-    $name = $_SESSION['name'];
+    $name = $_SESSION['name'] ?? 'Guest'; // null coalescing
 ?>
 <head>
     <title>Ninja Pizza</title>
